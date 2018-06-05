@@ -20,11 +20,11 @@ Instead of installing all these libraries independently, you can use prebulit Py
 
 
 ## Description of required inputs:
-#### Input1.1: A file containing the list of transcription factors (TFs):
+#### Input1: A file containing the list of transcription factors (TFs):
 This is a csv file in which rows contain the names of the regulators (e.g. TFs). The file should not have a header. As an example see the file "Data/TF_Ensemble.csv". 
 
-#### Input1.2: A file containing p-values of gene-phenotype associations only for genes of interest:
-This is a (gene x phenotype) csv file (see "Data/Pvalue_gene_phenotype_interest.csv" as an example). The rows correspond to target genes of interest (this may be only a subset of all genes, or it may be all the genes). The p-value for TF-phenotype should not be included in this file. The value assigned to each gene represents the p-value of association between the expression of that gene and the variation in the phenotype across different samples obtained using a proper statistical test (e.g. a ttest for binary phenotype or Pearson's correlation for continuous, etc.). The genes should be sorted in an ascending order based on the p-value (smallest p-values appear first). The file is assumed to have a header. 
+#### Input2: A file containing p-values of gene-phenotype associations:
+This is a (gene x phenotype) csv file (see "Data/Pvalue_gene_phenotype_interest.csv" as an example). The rows correspond to target genes of interest. The p-value for TF-phenotype should not be included in this file. The value assigned to each gene represents the p-value of association between the expression of that gene and the variation in the phenotype across different samples obtained using a proper statistical test (e.g. a ttest for binary phenotype or Pearson's correlation for continuous, etc.). The file is assumed to have a header. 
 
 Example:
 
@@ -34,8 +34,8 @@ Example:
 | gene2 | 5E-14 |
 | gene3 | 3E-10 |
 
-#### Input1.3: A file containing gene and TF expression data:
-This is a (gene x samples) csv file containing the normalized gene (and TF) expression profiles across different samples. This file must contain expression of target genes provided in Input1.2 and TFs provided in Input1.1. The file has a header representing sample names. See "Data/expr_sample.csv" as a sample input.  
+#### Input3: A file containing gene and TF expression data:
+This is a (gene x samples) csv file containing the normalized gene (and TF) expression profiles across different samples. This file must contain expression of target genes provided in Input2 and TFs provided in Input1. The file has a header representing sample names. See "Data/expr_sample.csv" as a sample input.  
 
 Example:
 
