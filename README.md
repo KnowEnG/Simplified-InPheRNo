@@ -7,7 +7,7 @@
 
 
 ## Motivation
-This repository contains computational tool which is a simplified version of InPheRNo (https://github.com/KnowEnG/InPheRNo). While InPheRNo reconstructs ‘phenotype-relevant’ transcriptional regulatory networks, considering the effect of multiple transcription factors (TFs) on the genes, Simplified-InPheRNo only considers the Pearson's correlation of each (gene, TF) pair separately. 
+This repository contains computational tool which is a simplified version of InPheRNo (https://github.com/KnowEnG/InPheRNo). While InPheRNo reconstructs ‘phenotype-relevant’ transcriptional regulatory networks, considering the effect of multiple transcription factors (TFs) on the genes, Simplified-InPheRNo only considers the Pearson's correlation of each (gene, TF) pair separately. Simplified-InPheRNo works by combining the p-value of association of (transcription factors, genes) and the p-value of association between (gene-phenotype) using Fisher's method.
 
 ## Requirements
 
@@ -47,13 +47,16 @@ Example:
 | gene2 | 0.9 | -2.3 | -0.3 |
 | gene3 | 0.4 | 0.8 | 1.5 |
  
-### Description of outputs:
-The first step of InPheRNo generates two output files that by default will be located in a directory called "Results" placed in the current directory. These intermediate outupts will be used in the next step of InPheRNo. 
+## Description of outputs:
+This script generates two output files that by default will be located in a directory called "Results" placed in the current directory. 
 
-#### Output1.1: Pvalue_gene_phenotype_interest_tmp.csv
-If default parameters are used to run the first step, Output1.1 will be a file called "Pvalue_gene_phenotype_interest_tmp.csv" which is generated from Input1.2, properly sorted and cleaned up (if necessary). See folder "Results" for a sample.
+#### Output1: Network_pvalue.csv
+If default parameters are used to run the tool, Output1 will be a file called "Network_pvalue.csv", placed in "./Results" by default. This is a (gene x TF) file representing the phenotype-relevant co-expression network in which the values represent the p-value 
 
-#### Output1.2: Pvalue_gene_tf_tmp.csv
+
+which is generated from Input1.2, properly sorted and cleaned up (if necessary). See folder "Results" for a sample.
+
+#### Output2: Network_statistic.csv
 If default parameters are used to run the first step, Output1.2 will be a file called "Pvalue_gene_tf_tmp.csv". This is a (gene x TF)  csv file containing p-values of gene-tf association, sorted in an ascending order based on Output1.1 file. The file has a header. See folder "Results" for a sample.
 
 ### Running InPheRNo_step1.py: 
