@@ -1,5 +1,6 @@
 
-# *Simplified-InPheRNo* - A method for Inference of Phenotype-relevant Co-expression Networks of Transcription Factors and Genes
+# *Simplified-InPheRNo* 
+- A method for Inference of Phenotype-relevant Co-expression Networks of Transcription Factors and Genes
 #### Amin Emad (email: emad2 (at) illinois (dot) edu)
 #### KnowEnG BD2K Center of Excellence
 #### University of Illinois Urbana-Champaign
