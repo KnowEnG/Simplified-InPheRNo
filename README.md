@@ -6,31 +6,20 @@
 #### University of Illinois Urbana-Champaign
 
 
-# Motivation
+## Motivation
 This repository contains computational tool which is a simplified version of InPheRNo (https://github.com/KnowEnG/InPheRNo). While InPheRNo reconstructs ‘phenotype-relevant’ transcriptional regulatory networks, considering the effect of multiple transcription factors (TFs) on the genes, Simplified-InPheRNo only considers the Pearson's correlation of each (gene, TF) pair separately. 
 
-The figure below depcits the method overview. 
-
-![Method Overview](/Images/Figure1_Pipeline_final.png)
-
-# Requirements
+## Requirements
 
 In order to run the code, you need to have Python 3.5 installed. In addition, the code uses the following python modules/libraries which need to be installed (the number in brackets show the version of the module used to generate the results in the manuscript):
 - [Numpy](http://www.numpy.org/) (version 1.13.0)
 - [Scipy](https://www.scipy.org/) (verison 0.19.1)
 - [Pandas](http://pandas.pydata.org/) (version 0.20.2)
-- [Sklearn (scikit-learn)](http://scikit-learn.org/stable/) (version 0.18.1)
-- [PyMC](https://pymc-devs.github.io/pymc/) (version 2.3.6)
 
-Instead of installing all these libraries independently, you can use prebulit Python distributions such as [Anaconda](https://www.continuum.io/downloads), which provides a free academic subscription. If you are using Anaconda, you can easily install any specific version of the modules above using a command like:
+Instead of installing all these libraries independently, you can use prebulit Python distributions such as [Anaconda](https://www.continuum.io/downloads), which provides a free academic subscription. 
 
-conda install pymc=2.3.6
 
-# Running InPheRNo
-Running InPheRNo involves running three manuscripts (InPheRNo_step1.py, InPheRNo_step2.py and InPheRNo_step3.py) in a row. Since the intermediate results are used in the following steps, one needs to wait for the preceeding step to finish before running the next step. 
-
-## STEP 1:
-### Description of required inputs:
+## Description of required inputs:
 #### Input1.1: A file containing the list of transcription factors (TFs):
 This is a csv file in which rows contain the names of the regulators (e.g. TFs). The file should not have a header. As an example see the file "Data/TF_Ensemble.csv". 
 
