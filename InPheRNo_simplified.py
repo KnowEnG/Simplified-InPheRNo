@@ -40,7 +40,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('-id', '--input_directory', default = './Data', help = 'Address of directory containing input files')
 parser.add_argument('-od', '--output_directory', default = './Results', help = 'output directory adddress')
-parser.add_argument('-it', '--input_tf', default = 'TF_Ensemble.csv', help = 'Name of the file containing list of TFs in a csv file. The file should have a header.')
+parser.add_argument('-it', '--input_tf', default = 'TF_Ensemble.csv', help = 'Name of the file containing list of TFs in a csv file. The file should not have a header.')
 parser.add_argument('-ie', '--input_expression', default = 'expr_sample.csv', help = 'A file containing gene and TF expression data (gene x samples). The file has a header (sample names).')
 parser.add_argument('-igp', '--input_gene_phenotype_interest', default = 'Pvalue_gene_phenotype_interest.csv', help = 'A file (gene x pvalue) containing p-values of gene-phenotype only for genes of interest (and not all genes), sorted in an ascending order based on the p-value (smallest p-values appear first). Only include genes of interest to reduce computation time. The file has a header.')
 parser.add_argument('-onp', '--output_network_pvalue', default = 'Network_pvalue.csv', help = 'A file (gene x TF) representing the network in which the values correspond to the combined p-values of (gene-phenotype) and (TF-gene) assoiations.')
@@ -75,7 +75,7 @@ address_out_statistic = os.path.join(args.output_directory, args.output_network_
 
 
 ##########%%%%%%%%%%@@@@@@@@@@!!!!!!!!!!@@@@@@@@@@%%%%%%%%%%##########
-TF_list = list(pd.read_csv(address_TF, sep=delim_tl, index_col=0).index.values)
+TF_list = list(pd.read_csv(address_TF, sep=delim_tl, header=None, index_col=0).index.values)
 expr_all = pd.read_csv(address_in_expr, sep=delim_ex, index_col=0)    
 gene_pheno_pval = pd.read_csv(address_in_gene_pheno, sep=delim_gp, index_col=0)
 gene_pheno_pval = gene_pheno_pval.dropna()
